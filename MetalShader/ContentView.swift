@@ -32,6 +32,12 @@ struct ContentView: View {
                     } label: {
                         Text("Mesh Animate")
                 }
+                
+                NavigationLink {
+                    DotMatrixView()
+                    } label: {
+                        Text("Dot Matrix")
+                }
             }
             .navigationTitle("Shader Example")
         }
