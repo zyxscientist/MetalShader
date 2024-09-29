@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct Glowloop: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct GlowloopView: View {
+    @State var color: Color
+       let startDate = Date()
+       var body: some View {
+           
+           GeometryReader { geometry in
+
+            TimelineView(.animation) { _ in
+                       
+               VStack
+                   { color }
+                   .colorEffect(ShaderLibrary.GlowLoopShader(
+                       .float2(geometry.size),
+                       .float(startDate.timeIntervalSinceNow)))
+               }
+           }
+           .background(Color.black)
+       }
+   }
 
 #Preview {
-    Glowloop()
+    GlowloopView(color: .indigo)
 }

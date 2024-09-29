@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct Grid: View {
+struct ChecksView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "figure.run.circle.fill")
+            .font(.system(size: 300))
+            .colorEffect(ShaderLibrary.checkerboard(.float(10), .color(.blue)))
+
     }
 }
 
 #Preview {
-    Grid()
+    ChecksView()
 }
