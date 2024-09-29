@@ -23,9 +23,14 @@ struct ContentView: View {
                 
                 NavigationLink {
                     GlowloopView(color: .indigo)
-                            .navigationTitle("Glowloop View")
                     } label: {
                         Text("Glowloop View")
+                }
+                
+                NavigationLink {
+                    MeshAnimate()
+                    } label: {
+                        Text("Mesh Animate")
                 }
             }
             .navigationTitle("Shader Example")
